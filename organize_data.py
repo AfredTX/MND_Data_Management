@@ -36,7 +36,3 @@ def organize_data():
                         "are closed. Enter 'run' to try again when files are closed.")
             if run.rstrip() == 'run':
                 continue
-    #jbw.scrape_jobs_to_google("Forklift")
-    #jbw.scrape_jobs_to_google("CDL B")
-    #jbw.scrape_jobs_to_google("Warehouse")
-
