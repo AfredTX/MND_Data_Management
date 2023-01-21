@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-
 from settings_RSS import Settings
 
 settings = Settings()
+
 pd.set_option('mode.chained_assignment', None)
 
 
@@ -733,8 +733,7 @@ def format_demographics(df):
     """
     df = calculate_client_age(df)
     # Convert numeric columns
-    df[settings.numeric_cols] = df[settings.numeric_cols].apply(
-        pd.to_numeric, errors='coerce', axis=1)
+    df[settings.numeric_cols] = df[settings.numeric_cols].apply(pd.to_numeric, errors='coerce', axis=1)
     df = identify_cdbg(df)
     df = kpi_statistics(df)
     df = gained_new_employment(df)
