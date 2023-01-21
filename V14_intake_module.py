@@ -1,17 +1,14 @@
 import json
 import os
 from pathlib import Path
-
 import PyPDF2
 import pandas as pd
 import requests
 from openpyxl import load_workbook
-
 from settings_RSS import Settings
 
 settings = Settings()
 
-# todo create classes for intake doc
 
 def extract_pdf_data(pdf):
     """
