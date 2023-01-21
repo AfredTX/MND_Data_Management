@@ -13,15 +13,12 @@ def verify_new_event(id_list, activity_type, identifier=""):
     else:
         df = reporting_df[reporting_df[f'{activity_type}'].notnull()]
     existing_id_list = list(df['Account Id'])
-
     return [x for x in id_list if x not in existing_id_list]
 
 def get_new_completer_list(attendance_df):
     completers_df = attendance_df[attendance_df['Passed Training'] == 'Passed']
     completer_id_list = list(completers_df['Account ID'].astype(int))
-
     new_completer_list = verify_new_event(completer_id_list, "Training Status", "Complete")
-
     return completers_df, new_completer_list
 
 def format_training_status_activity_dict(completers_df, new_completer_list):
@@ -94,9 +91,6 @@ def update_new_enrollees(df):
             except ValueError:
                 print("Faulty Data Formatting in Attendance Sheet. Cannot perform analysis.")
                 break
-
-
-
 
 
 def automated_activity_updates():
