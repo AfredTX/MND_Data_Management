@@ -1,14 +1,11 @@
 import json
-
 import pandas as pd
 import requests
-
 from settings_RSS import Settings
 from datetime import datetime as dt
 
 settings = Settings()
 
-# todo create classes for each API
 
 def get_last_call_date():
     """
