@@ -1,17 +1,15 @@
 import zipfile
 from datetime import timedelta
-
 import pandas as pd
 from openpyxl import load_workbook
 import warnings
-
 from settings_RSS import Settings
 import data_manipulation_module as dmm
+import xlsxwriter
 
 settings = Settings()
 warnings.filterwarnings('ignore', '.*data validation.*', )
 
-import xlsxwriter
 
 # todo create a class for a client directory
 
@@ -121,5 +119,3 @@ def update_client_directories():
     df = dmm.coerce_to_datetime(df,'Original Intake Date','Cohort Date')
     update_complete_client_directory(df)
     update_coach_directories(df)
-
-
