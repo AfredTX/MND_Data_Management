@@ -60,30 +60,3 @@ def write_grant_reports():
                     print(f"{filename} created!")
                 except KeyError:
                     print(f"Unknown Keyerror ocurred when updating {filename}")
-
-            if settings.username == "Fred":
-                print("Backing Up in OneDrive")
-                filename = f"{settings.od_grant_reports_path}\\{grant}_{cycle}.xlsx"
-
-                cycle_kpi_df = cycle_df[settings.kpi_columns].copy()
-                cycle_employments = cycle_df[cycle_df['Gained Employment'] == 'Yes'][settings.kpi_employments].copy()
-                cycle_certifications = cycle_df[cycle_df['Gained Certification'] == 'Yes'][
-                    settings.kpi_certifications].copy()
-                while True:
-                    try:
-                        write_excel(filename, 'Data', cycle_df)
-                        write_excel(filename, 'KPIs', cycle_kpi_df)
-                        write_excel(filename, 'Employments', cycle_employments)
-                        write_excel(filename, 'Certifications', cycle_certifications)
-                        break
-                    except FileNotFoundError:
-                        print("File Doesn't Exist Yet, Let Me Make It!")
-                        workbook = xlsxwriter.Workbook(filename)
-                        workbook.add_worksheet('Data')
-                        workbook.add_worksheet('KPIs')
-                        workbook.add_worksheet('Employments')
-                        workbook.add_worksheet('Certifications')
-                        workbook.close()
-                        print(f"{filename} created!")
-                    except KeyError:
-                        print(f"Unknown Keyerror ocurred when updating {filename}")
