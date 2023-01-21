@@ -4,7 +4,6 @@ import data_manipulation_module as dmm
 import xlsxwriter
 import client_directories_module as cdm
 import numpy as np
-
 from settings_RSS import Settings
 
 settings = Settings()
