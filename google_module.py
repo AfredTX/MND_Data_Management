@@ -36,7 +36,7 @@ def write_to_google_sheet(sample_spreadsheet_id, df,job_type):
     scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 
     # Read the .json file and authenticate with the links.
-    credentials = Credentials.from_service_account_file(r'C:\Users\fredr\Downloads\sheets-network-f964f31e5bf1.json',
+    credentials = Credentials.from_service_account_file(<CREDENTIALS>,
                                                         scopes=scopes)
 
     # Request the authorization and open the selected spreadsheet.
